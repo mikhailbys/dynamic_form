@@ -1,0 +1,19 @@
+@use '../../../../shared/modules/variables.module' as variables;
+@use '../../../../shared/modules/mixins.module' as mixins;
+
+.footer {
+  @include mixins.flex-row-center;
+  padding: 20px 0;
+}
+
+.button {
+  &:global(.ant-btn-primary) {
+    width: 30%;
+    background: variables.$submit_color;
+    border-color: variables.$submit_color;
+    &:hover {
+      background: lighten(variables.$submit_color, 5%);
+      border-color: lighten(variables.$submit_color, 5%);
+    }
+ }
+}
