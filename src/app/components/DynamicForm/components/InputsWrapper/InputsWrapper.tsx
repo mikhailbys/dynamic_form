@@ -16,7 +16,6 @@ type Props = {
     deleteInput: (index: string) => void;
 };
 
-
 export const InputsWrapper: FC<Props> = ({
   input,
   deleteInput,
@@ -27,21 +26,27 @@ export const InputsWrapper: FC<Props> = ({
 }) => {
 
     const renderTextInput = (): JSX.Element => (
-        <Form.Item name={name} key={inputKey} label={label}>
-            <Input disabled={mode !== ModeEnum.Edit} placeholder="TextField"/>
-        </Form.Item>
+        <div className={styles.item}>
+            <Form.Item name={name} key={inputKey} label={label}>
+                <Input disabled={mode !== ModeEnum.Edit} placeholder="TextField"/>
+            </Form.Item>
+        </div>
     );
 
     const renderTextArea = (): JSX.Element => (
-        <Form.Item name={name} key={inputKey} label={label}>
-            <TextArea disabled={mode !== ModeEnum.Edit} rows={4} placeholder="TextArea"/>
-        </Form.Item>
+        <div className={styles.item}>
+            <Form.Item name={name} key={inputKey} label={label}>
+                <TextArea disabled={mode !== ModeEnum.Edit} rows={4} placeholder="TextArea"/>
+            </Form.Item>
+        </div>
     );
 
     const renderDateInput = (): JSX.Element => (
-        <Form.Item name={name} key={inputKey} label={label}>
-            <DatePicker disabled={mode !== ModeEnum.Edit}/>
-        </Form.Item>
+        <div className={styles.dateItem}>
+            <Form.Item name={name} key={inputKey} label={label}>
+                <DatePicker disabled={mode !== ModeEnum.Edit}/>
+            </Form.Item>
+        </div>
     );
 
     return (

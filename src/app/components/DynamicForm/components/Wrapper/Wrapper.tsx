@@ -6,9 +6,9 @@ import {useCurrentMode} from "../../hooks/useCurrentMode";
 export const Wrapper = () => {
     const {mode, setMode} = useCurrentMode();
     return (
-        <div>
+        <>
           <MenuComponent mode={mode} setMode={setMode}/>
           <ModeWrapper mode={mode}/>
-        </div>
+        </>
     );
 }

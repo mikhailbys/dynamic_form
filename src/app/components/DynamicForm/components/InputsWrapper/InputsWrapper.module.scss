@@ -1,9 +1,21 @@
+@use '/src/app/shared/modules/variables.module' as variables;
+
 .wrapper {
   display: flex;
 }
 
 .deleteButton {
   &:global(.ant-btn-primary) {
-    margin-left: 5%;
+    margin-left: 2%;
+  }
+}
+
+.item {
+  width: variables.$item_width;
+}
+
+.dateItem {
+  &:global(.ant-picker) {
+    width: variables.$item_width;
   }
 }
